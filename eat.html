@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.0.1">
+    <title>Starter Template · Bootstrap</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/starter-template/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="./assets/dist/css/bootstrap.css" rel="stylesheet">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="./assets/dist/css/starter-template.css" rel="stylesheet">
+<!--    <link href="starter-template.css" rel="stylesheet">-->
+</head>
+<body>
+
+<main role="main" class="container">
+
+    <div class="starter-template">
+        <h2>今天吃啥</h2>
+        <div class="menu h5">
+            <span>螺蛳粉</span>
+            <span>桂林米粉</span>
+            <span>蒸菜</span>
+            <span>粥</span>
+            <span>辣子鸡</span>
+            <span>白灼虾</span>
+            <span>白灼虾</span>
+            <span>啤酒鱼</span>
+            <span>梭子蟹</span>
+            <span>小龙虾</span>
+            <span>素炒南瓜丝（加醋）</span>
+            <span>红烧茄子</span>
+            <span>韩国烤肉</span>
+            <span>海鲜大排档</span>
+        </div>
+        <button id="btn" class="button">点菜</button>
+        <p id="cm" class="result h5">地锅鸡</p>
+
+    </div>
+
+</main><!-- /.container -->
+<script type="text/javascript">
+    window.onload = function () {
+        var btn = document.getElementById('btn');
+        var cm = document.getElementById('cm');
+//				获取html中的菜单
+        var menu = document.getElementsByTagName('span');
+        var menuList = [];
+//				遍历菜单逐个加到新菜单menuList数组中
+        for (var i = 0; i < menu.length; i++) {
+            menuList.push(menu[i].innerHTML);
+        }
+
+        btn.onclick = function () {
+            var num = Math.floor(Math.random() * (menuList.length - 1 + 1 - 0) + 0);
+            cm.innerHTML = menuList[num];
+        }
+    }
+</script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
+<script src="../assets/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
